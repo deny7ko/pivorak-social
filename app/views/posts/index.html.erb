@@ -1,11 +1,5 @@
 <%= turbo_frame_tag :posts do %>
   <% @posts.each do |post| %>
-    <div>
-      <%= post.title %>
-    </div>
-
-    <div>
-      <%= post.description %>
-    </div>
+    <%= render partial: 'post', locals: { post: post } %>
   <% end %>
 <% end %>
