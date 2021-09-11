@@ -1,7 +1,13 @@
-<div class="border border-white mb-4 p-8 flex">
+<div class="border border-white mb-4 p-8 flex relative">
   <%= image_tag 'avatar.jpg', class: 'rounded-full h-16 w-16' %>
 
   <div class="flex items-center px-5">
     <%= post.body %>
+  </div>
+
+  <div class="cursor-pointer absolute right-5">
+    <%= button_to post_path(post), method: :delete do %>
+      delete
+    <% end %>
   </div>
 </div>
