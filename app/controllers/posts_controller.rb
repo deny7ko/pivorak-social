@@ -1,9 +1,11 @@
 class PostsController < ApplicationController
+  include Pagy::Backend
+
   before_action :set_post, only: %i[ show edit update destroy ]
 
   # GET /posts or /posts.json
   def index
-    @posts = Post.all.order(created_at: :desc)
+    @pagy, @posts = pagy(Post, items: 5)
   end
 
   # GET /posts/1 or /posts/1.json

@@ -59,3 +59,5 @@ gem 'rubocop', require: false
 gem 'rubocop-rails', require: false
 gem 'erb_lint', require: false
 gem 'better_html'
+
+gem "pagy", "~> 4.11"
