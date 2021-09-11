@@ -4,7 +4,7 @@
   <% end %>
 
   <% if @pagy.next %>
-    <%= turbo_frame_tag "posts/page/#{@pagy.next}", src: posts_path(page: @pagy.next) do %>
+    <%= turbo_frame_tag "posts/page/#{@pagy.next}", src: posts_path(page: @pagy.next), loading: :lazy do %>
       <%= render 'posts/placeholder_group' %>
     <% end %>
   <% end %>
