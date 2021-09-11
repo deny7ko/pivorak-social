@@ -1,24 +1,21 @@
-# README
+# Setup
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+```
+git clone git@github.com:denys-medynskyi/hotwire-social-app-demo.git
+```
 
-Things you may want to cover:
+```
+rvm use ruby-3.0.1@hotwire-social-app-demo --create
+```
 
-* Ruby version
+```
+gem install bundler
+```
 
-* System dependencies
+```
+rails db:setup
+```
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
+rails s
+```
