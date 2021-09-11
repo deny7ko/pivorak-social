@@ -1,6 +1,6 @@
 <%= form_with(model: post) do |form| %>
   <div class="flex">
     <%= form.text_area :body, placeholder: 'Share your thoughts', class: 'w-full px-3 pt-1 text-base text-gray-700 placeholder-gray-600 border' %>
-    <%= form.submit 'Post', class: 'cursor-pointer px-3 font-bold border border-white bg-gray-900' %>
+    <%= form.submit 'Post', data: { disable_with: false }, class: 'cursor-pointer px-3 font-bold border border-white bg-black' %>
   </div>
 <% end %>
