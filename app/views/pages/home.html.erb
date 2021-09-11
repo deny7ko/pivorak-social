@@ -1,7 +1,9 @@
 <%= render partial: 'posts/form', locals: { post: post } %>
 
+<div class="pt-5"></div>
+
 <%= turbo_frame_tag :posts,
                     src: posts_path,
                     loading: 'lazy' do %>
-  This will be replace after load
+  This will be replaced after load
 <% end %>
