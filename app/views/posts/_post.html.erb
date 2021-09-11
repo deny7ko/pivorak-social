@@ -1,5 +1,7 @@
 <div class="border border-white mb-4 p-8 flex relative">
-  <%= image_tag 'avatar.jpg', class: 'rounded-full h-16 w-16' %>
+  <%= link_to user_path('denysko') do %>
+    <%= image_tag 'avatar.jpg', class: 'rounded-full h-16 w-16' %>
+  <% end %>
 
   <div class="flex items-center px-5">
     <%= post.body %>
