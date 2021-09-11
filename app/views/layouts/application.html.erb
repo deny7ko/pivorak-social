@@ -11,7 +11,21 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body class="bg-black">
-    <%= yield %>
+  <body class="flex h-screen text-white text-center bg-black">
+    <div class="flex-none w-64 border-r py-10">
+      <%= turbo_frame_tag :profile, src: '/profile' do %>
+        Loading profile ...
+      <% end %>
+    </div>
+
+    <div class="flex-grow py-10">
+      <%= yield %>
+    </div>
+
+    <div class="flex-none w-96 border-l py-10">
+      <%= turbo_frame_tag :notifications, src: '/notifications' do %>
+        Loading notifications ...
+      <% end %>
+    </div>
   </body>
 </html>
