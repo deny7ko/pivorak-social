@@ -5,7 +5,7 @@ class PostsController < ApplicationController
 
   # GET /posts or /posts.json
   def index
-    @pagy, @posts = pagy(Post, items: 5)
+    @pagy, @posts = pagy(Post.order(created_at: :desc), items: 5)
   end
 
   # GET /posts/1 or /posts/1.json
@@ -51,7 +51,7 @@ class PostsController < ApplicationController
   def destroy
     @post.destroy
     respond_to do |format|
-      format.html { redirect_to posts_url, notice: "Post was successfully destroyed." }
+      format.turbo_stream { render :destroy, locals: { post: @post } }
       format.json { head :no_content }
     end
   end
