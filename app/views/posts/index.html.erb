@@ -1,4 +1,4 @@
-<%= turbo_frame_tag "posts/page/#{@pagy.page}" do %>
+<%= turbo_frame_tag "posts_page_#{@pagy.page}" do %>
   <% @posts.each do |post| %>
     <%= turbo_frame_tag dom_id(post) do %>
       <%= render partial: 'post', locals: { post: post } %>
@@ -6,7 +6,7 @@
   <% end %>
 
   <% if @pagy.next %>
-    <%= turbo_frame_tag "posts/page/#{@pagy.next}", src: posts_path(page: @pagy.next), loading: :lazy do %>
+    <%= turbo_frame_tag "posts_page_#{@pagy.next}", src: posts_path(page: @pagy.next), loading: :lazy do %>
       <%= render 'posts/placeholder_group' %>
     <% end %>
   <% end %>
