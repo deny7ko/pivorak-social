@@ -1,3 +1,8 @@
+# Prerequisites
+- redis
+- PostgreSQL
+
+
 # Setup
 
 ```
